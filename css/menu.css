@@ -3,29 +3,29 @@
 @media (max-width: 760px) {
   .site-head .nav { display: none; }
   .logo { position: relative; z-index: 2; }
-  .burger { display: block; position: relative; z-index: 2; flex: none; width: 27px; height: 17px; -webkit-tap-highlight-color: transparent; }
-  .burger::before { content: ""; position: absolute; inset: -14px -9px; } /* 44 to tap */
-  .burger i { position: absolute; left: 0; width: 100%; height: 3px; border-radius: 2px; background: var(--blue); transition: transform .32s cubic-bezier(.2, .7, .2, 1), top .32s cubic-bezier(.2, .7, .2, 1), opacity .16s; }
+  .burger { display: block; position: relative; z-index: 2; flex: none; width: calc(27*var(--ui)); height: calc(17*var(--ui)); -webkit-tap-highlight-color: transparent; }
+  .burger::before { content: ""; position: absolute; inset: calc(-14*var(--ui)) calc(-9*var(--ui)); } /* 44 to tap */
+  .burger i { position: absolute; left: 0; width: 100%; height: calc(3*var(--ui)); border-radius: calc(2*var(--ui)); background: var(--blue); transition: transform .32s cubic-bezier(.2, .7, .2, 1), top .32s cubic-bezier(.2, .7, .2, 1), opacity .16s; }
   .burger i:nth-child(1) { top: 0; }
-  .burger i:nth-child(2) { top: 7px; }
-  .burger i:nth-child(3) { top: 14px; }
-  .menu-open .burger i:nth-child(1) { top: 7px; transform: rotate(45deg); }
+  .burger i:nth-child(2) { top: calc(7*var(--ui)); }
+  .burger i:nth-child(3) { top: calc(14*var(--ui)); }
+  .menu-open .burger i:nth-child(1) { top: calc(7*var(--ui)); transform: rotate(45deg); }
   .menu-open .burger i:nth-child(2) { opacity: 0; }
-  .menu-open .burger i:nth-child(3) { top: 7px; transform: rotate(-45deg); }
+  .menu-open .burger i:nth-child(3) { top: calc(7*var(--ui)); transform: rotate(-45deg); }
   html.menu-open { overflow: hidden; }
 
   .menu { display: block; position: fixed; inset: 0; z-index: 1; visibility: hidden; opacity: 0; overscroll-behavior: contain; transition: opacity .28s, visibility 0s .28s; }
   .menu-open .menu { visibility: visible; opacity: 1; transition: opacity .28s; }
   .menu-links { display: flex; flex-direction: column; }
   .menu-links a { display: flex; align-items: center; color: var(--blue); -webkit-tap-highlight-color: transparent; }
-  .menu-links a.on::after { content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--blue); }
+  .menu-links a.on::after { content: ""; flex: none; width: calc(8*var(--ui)); height: calc(8*var(--ui)); border-radius: 50%; background: var(--blue); }
 
   /* The whole screen, big type, links rise in one after another */
-  .menu { background: var(--bg); padding: calc(var(--header) + 24px) var(--margin) 0; }
-  .menu-links { gap: 16px; }
-  .menu-links a { width: max-content; gap: 12px; font-size: 48px; line-height: 1.2; opacity: 0; transform: translateY(12px); filter: blur(6px); transition: opacity .2s, transform .2s, filter .2s; }
+  .menu { background: var(--bg); padding: calc(var(--header) + calc(24*var(--ui))) var(--margin) 0; }
+  .menu-links { gap: calc(16*var(--ui)); }
+  .menu-links a { width: max-content; gap: calc(12*var(--ui)); font-size:max(calc(48*var(--ui)),min(48PX,10PX)); line-height: 1.2; opacity: 0; transform: translateY(calc(12*var(--ui))); filter: blur(calc(6*var(--ui))); transition: opacity .2s, transform .2s, filter .2s; }
   .menu-open .menu-links a { opacity: 1; transform: none; filter: none; transition: opacity .5s calc(var(--i) * 55ms + 60ms), transform .6s cubic-bezier(.2, .7, .2, 1) calc(var(--i) * 55ms + 60ms), filter .5s calc(var(--i) * 55ms + 60ms); }
-  .menu-foot { display: flex; position: absolute; left: var(--margin); right: var(--margin); bottom: calc(32px + env(safe-area-inset-bottom)); justify-content: space-between; font: 400 12px/18px Poppins, sans-serif; letter-spacing: -.02em; color: #1a1a1a; }
-  .menu-foot div { display: flex; gap: 16px; }
+  .menu-foot { display: flex; position: absolute; left: var(--margin); right: var(--margin); bottom: calc(calc(32*var(--ui)) + env(safe-area-inset-bottom)); justify-content: space-between; font:400 max(calc(12*var(--ui)),min(12PX,10PX))/calc(18*var(--ui)) Poppins, sans-serif; letter-spacing: -.02em; color: #1a1a1a; }
+  .menu-foot div { display: flex; gap: calc(16*var(--ui)); }
 }
 @media (prefers-reduced-motion: reduce) { .menu, .menu *, .burger i { transition: none !important; } }

@@ -1,6 +1,6 @@
 /* Main page, desktop: one scroll. Figma's Home frame shows the flow stacked; Home Page 2 shows where it comes to rest. */
-.scene { position: relative; height: calc(var(--travel, 760px) + 588px); }
-.pin { position: sticky; top: 0; z-index: 2; height: 588px; max-width: 1440px; margin: 0 auto; pointer-events: none; }
+.scene { position: relative; height: calc(var(--travel, calc(760*var(--u))) + calc(588*var(--u))); }
+.pin { position: sticky; top: 0; z-index: 2; height: calc(588*var(--u)); max-width: calc(1440*var(--u)); margin: 0 auto; pointer-events: none; }
 .hero-name { position: absolute; left: calc(63 / 1440 * 100%); width: calc(981.47 / 1440 * 100%); aspect-ratio: 981.47 / 424; pointer-events: auto; }
 #nameRest { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; fill: var(--blue); }
 .name-jack { position: absolute; transform-origin: 0 0; }
@@ -14,15 +14,15 @@
 .hero-off .hit { pointer-events: none; }
 @keyframes pop { from { transform: scale(.86); } to { transform: scale(1); } }
 
-.typing { position: absolute; display: flex; align-items: center; gap: 24px; white-space: nowrap; color: #000; }
+.typing { position: absolute; display: flex; align-items: center; gap: calc(24*var(--u)); white-space: nowrap; color: #000; }
 .typing-dot { display: block; flex: none; border-radius: 50%; background: var(--blue); }
 #typed { line-height: 1; }
 
-.intro { position: absolute; left: var(--margin); top: 205px; width: min(753px, 60%); white-space: pre-wrap; }
+.intro { position: absolute; left: var(--margin); top: calc(205*var(--u)); width: min(calc(753*var(--u)), 60%); white-space: pre-wrap; }
 .jack-slot { display: inline-block; line-height: 0; visibility: hidden; }
 .jack-slot svg { width: 100%; height: auto; }
-.robot { position: absolute; right: 72px; top: 194px; width: 144px; height: 140px; pointer-events: auto; opacity: 0; display: block; transform-origin: center; }
-.robot-stage { position: absolute; inset: -64px; }
+.robot { position: absolute; right: calc(72*var(--u)); top: calc(194*var(--u)); width: calc(144*var(--u)); height: calc(140*var(--u)); pointer-events: auto; opacity: 0; display: block; transform-origin: center; }
+.robot-stage { position: absolute; inset: calc(-64*var(--u)); }
 .robot-stage canvas { display: block; width: 100% !important; height: 100% !important; }
 .robot-poster { position: absolute; inset: 0; transition: opacity .3s; }
 .robot-poster img { width: 100%; height: 100%; object-fit: contain; }
@@ -33,12 +33,12 @@
 .robot-stage.big { position: fixed; inset: 0; z-index: 205; mix-blend-mode: multiply; }
 .robot-stage.big { cursor: grab; touch-action: none; }
 .robot-stage.big:active { cursor: grabbing; }
-.robot-x { position: fixed; top: 16px; right: 16px; z-index: 210; display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; color: #fff; background: rgb(16 22 30 / 35%); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); transition: background .2s, opacity .3s; pointer-events: auto; opacity: 0; }
+.robot-x { position: fixed; top: calc(16*var(--ui)); right: calc(16*var(--ui)); z-index: 210; display: flex; align-items: center; justify-content: center; width: calc(32*var(--ui)); height: calc(32*var(--ui)); border-radius: 50%; color: #fff; background: rgb(16 22 30 / 35%); -webkit-backdrop-filter: blur(calc(4*var(--ui))); backdrop-filter: blur(calc(4*var(--ui))); transition: background .2s, opacity .3s; pointer-events: auto; opacity: 0; }
 .robot-x.on { opacity: 1; }
 .robot-x:hover { background: rgb(16 22 30 / 55%); }
-.robot-x svg { width: 16px; height: 16px; }
+.robot-x svg { width: calc(16*var(--ui)); height: calc(16*var(--ui)); }
 
-.home-works { padding-top: 0; gap: 80px; position: relative; z-index: 3; }
-.home-pair { display: flex; gap: 56px; }
+.home-works { padding-top: 0; gap: calc(80*var(--u)); position: relative; z-index: 3; }
+.home-pair { display: flex; gap: calc(56*var(--u)); }
 .home-pair > * { flex: 1 1 0; min-width: 0; }
-.home-more { display: flex; justify-content: center; margin-top: 4px; }
+.home-more { display: flex; justify-content: center; margin-top: calc(4*var(--u)); }

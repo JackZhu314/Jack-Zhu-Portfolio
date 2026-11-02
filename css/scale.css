@@ -1,0 +1,5 @@
+/* One unit for the whole site: every px in the CSS and in the Figma layout becomes a multiple of --u when the site is built (tools/build.mjs).
+   Desktop is the 1440 frame scaled to the window, so it looks the same on any screen. A very wide, short window stops growing at its height.
+   Phones keep their real size up to 480, then scale. --ui is for controls, which never shrink below their real size. PX in capitals stays a real pixel. */
+:root { --u: min(calc(100vw / 1440), max(calc(100vh / 760), 1px)); --ui: max(var(--u), 1px); }
+@media (max-width: 760px) { :root { --u: max(1px, calc(100vw / 480)); } }
