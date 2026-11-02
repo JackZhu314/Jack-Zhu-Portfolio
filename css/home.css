@@ -1,0 +1,44 @@
+/* Main page, desktop: one scroll. Figma's Home frame shows the flow stacked; Home Page 2 shows where it comes to rest. */
+.scene { position: relative; height: calc(var(--travel, 760px) + 588px); }
+.pin { position: sticky; top: 0; z-index: 2; height: 588px; max-width: 1440px; margin: 0 auto; pointer-events: none; }
+.hero-name { position: absolute; left: calc(63 / 1440 * 100%); width: calc(981.47 / 1440 * 100%); aspect-ratio: 981.47 / 424; pointer-events: auto; }
+#nameRest { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; fill: var(--blue); }
+.name-jack { position: absolute; transform-origin: 0 0; }
+.name-jack svg { width: 100%; height: auto; }
+.slot { transition: transform 180ms cubic-bezier(.2, .8, .2, 1); }
+.icon { shape-rendering: crispEdges; transform-box: fill-box; transform-origin: center bottom; }
+.slot.on .letter { visibility: hidden; }
+.slot:not(.on) .icon { visibility: hidden; }
+.slot.on .icon { animation: pop 140ms steps(3) both; }
+.hit { fill: transparent; outline: none; }
+.hero-off .hit { pointer-events: none; }
+@keyframes pop { from { transform: scale(.86); } to { transform: scale(1); } }
+
+.typing { position: absolute; display: flex; align-items: center; gap: 24px; white-space: nowrap; color: #000; }
+.typing-dot { display: block; flex: none; border-radius: 50%; background: var(--blue); }
+#typed { line-height: 1; }
+
+.intro { position: absolute; left: var(--margin); top: 205px; width: min(753px, 60%); white-space: pre-wrap; }
+.jack-slot { display: inline-block; line-height: 0; visibility: hidden; }
+.jack-slot svg { width: 100%; height: auto; }
+.robot { position: absolute; right: 72px; top: 194px; width: 144px; height: 140px; pointer-events: auto; opacity: 0; display: block; transform-origin: center; }
+.robot-stage { position: absolute; inset: -64px; }
+.robot-stage canvas { display: block; width: 100% !important; height: 100% !important; }
+.robot-poster { position: absolute; inset: 0; transition: opacity .3s; }
+.robot-poster img { width: 100%; height: 100%; object-fit: contain; }
+.robot.ready .robot-poster { opacity: 0; }
+
+.robot-veil { position: fixed; inset: 0; z-index: 204; background: #fff; opacity: 0; pointer-events: none; transition: opacity 1.1s cubic-bezier(.4, 0, .2, 1); }
+.robot-veil.on { opacity: 1; pointer-events: auto; }
+.robot-stage.big { position: fixed; inset: 0; z-index: 205; mix-blend-mode: multiply; }
+.robot-stage.big { cursor: grab; touch-action: none; }
+.robot-stage.big:active { cursor: grabbing; }
+.robot-x { position: fixed; top: 16px; right: 16px; z-index: 210; display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; color: #fff; background: rgb(16 22 30 / 35%); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); transition: background .2s, opacity .3s; pointer-events: auto; opacity: 0; }
+.robot-x.on { opacity: 1; }
+.robot-x:hover { background: rgb(16 22 30 / 55%); }
+.robot-x svg { width: 16px; height: 16px; }
+
+.home-works { padding-top: 0; gap: 80px; position: relative; z-index: 3; }
+.home-pair { display: flex; gap: 56px; }
+.home-pair > * { flex: 1 1 0; min-width: 0; }
+.home-more { display: flex; justify-content: center; margin-top: 4px; }
