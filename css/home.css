@@ -1,4 +1,6 @@
 /* Main page, desktop: one scroll. Figma's Home frame shows the flow stacked; Home Page 2 shows where it comes to rest. */
+/* The first paint can beat home.js: nothing of the intro shows until it has put everything in place */
+@media (min-width: 761px) { .hero-wait .site-head .logo, .hero-wait .site-head .nav, .hero-wait #heroName, .hero-wait #typing, .hero-wait #introRest { opacity: 0; } }
 .scene { position: relative; height: calc(var(--travel, calc(760*var(--u))) + calc(588*var(--u))); }
 .pin { position: sticky; top: 0; z-index: 2; height: calc(588*var(--u)); max-width: calc(1440*var(--u)); margin: 0 auto; pointer-events: none; }
 .hero-name { position: absolute; left: calc(63 / 1440 * 100%); width: calc(981.47 / 1440 * 100%); aspect-ratio: 981.47 / 424; pointer-events: auto; }
