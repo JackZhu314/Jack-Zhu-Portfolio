@@ -296,7 +296,7 @@ section[id] { scroll-margin-top: 112px; }
 
 /* End of page */
 .more-wrap { display: flex; justify-content: center; margin-top: 80px; }
-.foot { max-width: 1440px; margin: 0 auto; padding: 160px var(--margin) 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; font-size: 20px; line-height: 26px; color: #1a1a1a; }
+.foot { max-width: 1440px; margin: 0 auto; padding: 160px var(--margin) 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; font: 400 20px/30px Poppins, sans-serif; letter-spacing: -.02em; color: #1a1a1a; }
 .foot-links { display: flex; gap: 24px; }
 .foot a:hover { opacity: .6; }
 
@@ -312,7 +312,7 @@ section[id] { scroll-margin-top: 112px; }
   /* Figma "Design Mobile": 335 column in a 375 frame, content starts at 80, body 14, images radius 4 */
   :root { --margin: 20px; --header: 56px; }
   body { overflow-x: clip; font-size: 14px; line-height: 21px; }
-  .site-head-in { padding: 16px 16px 8px; align-items: center; }
+  .site-head-in { padding: 16px 20px 8px; align-items: center; }
   .logo svg { height: 26px; margin-top: 0; }
   .edge-top { height: 24px; }
   .nav a { padding: 4px 10px; font-size: 12px; line-height: 16px; }
@@ -395,6 +395,6 @@ section[id] { scroll-margin-top: 112px; }
   .voice-row .sg { font-size: 20px; line-height: 26px; }
 
   .more { padding: 8px 16px; }
-  .foot { padding: 64px var(--margin) 32px; font-size: 12px; line-height: 16px; }
+  .foot { padding: 64px var(--margin) 32px; font-size: 12px; line-height: 18px; }
   .foot-links { gap: 16px; }
 }

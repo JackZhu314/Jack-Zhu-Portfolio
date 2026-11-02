@@ -109,7 +109,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .lb.closing .lb-btn { opacity: 0; pointer-events: none; }
 
 /* Footer */
-.foot { max-width: 1440px; margin: 0 auto; padding: 160px var(--margin) 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; font-size: 20px; line-height: 26px; color: #1a1a1a; }
+.foot { max-width: 1440px; margin: 0 auto; padding: 160px var(--margin) 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; font: 400 20px/30px Poppins, sans-serif; letter-spacing: -.02em; color: #1a1a1a; }
 .foot-links { display: flex; gap: 24px; }
 .foot a:hover { opacity: .6; }
 
@@ -117,12 +117,12 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 @media (max-width: 1240px) { .tree.d p, .home-works p { white-space: pre-wrap !important; flex-shrink: 1 !important; min-width: 0; } }
 @media (max-width: 760px) {
   :root { --margin: 20px; --header: 56px; }
-  .site-head-in { padding: 16px 16px 8px; align-items: center; }
+  .site-head-in { padding: 16px 20px 8px; align-items: center; }
   .logo svg { height: 26px; margin-top: 0; }
   .edge-top { height: 12px; }
   .nav a { padding: 4px 10px; font-size: 12px; line-height: 16px; }
   .tree { padding-top: 80px; }
-  .foot { padding: 64px var(--margin) 32px; font-size: 12px; line-height: 16px; }
+  .foot { padding: 64px var(--margin) 32px; font-size: 12px; line-height: 18px; }
   .foot-links { gap: 16px; }
   .car-btn { width: 24px; height: 24px; top: calc(50% - 12px); }
   .car-btn.prev { left: 8px; } .car-btn.next { right: 8px; }
