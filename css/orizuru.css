@@ -69,7 +69,7 @@ a.glass:hover { filter: brightness(.97); }
 .sec-gap { margin-top: calc(80*var(--u)); }
 .shot { border-radius: calc(20*var(--u)); overflow: hidden; background: #fff; }
 .shot img, .shot video { width: 100%; height: 100%; object-fit: cover; }
-.r169 { aspect-ratio: 16 / 9; }
+.r169 { aspect-ratio: 16 / 9; contain: size; } /* the shape comes from the ratio alone; Safari 17.1 otherwise lets the video stretch it */
 
 /* Top section: the same on both views */
 .title-row { display: flex; justify-content: space-between; align-items: flex-end; gap: calc(24*var(--u)); flex-wrap: wrap; margin-bottom: calc(44*var(--u)); }
@@ -186,10 +186,11 @@ section[id] { scroll-margin-top: calc(112*var(--u)); }
 .oz-tl-note b { color: var(--ink); font-weight: 500; }
 
 .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: calc(12*var(--u)); }
+.pair > figure { align-self: start; } /* Safari 17.1 stretches these past the row, over the heading below */
 .step { display: grid; grid-template-columns: 460fr 418fr; gap: calc(60*var(--u)); align-items: start; }
 .step .copy { display: flex; flex-direction: column; gap: calc(12*var(--u)); }
 .step.match { align-items: stretch; }
-.step.match .shot { position: relative; height: 100%; }
+.step.match .shot { position: relative; contain: size; } /* stretched to the row; no size of its own, or Safari 17.1 sizes the row from the video's shape */
 .step.match video { position: absolute; inset: 0; } /* as tall as the text beside it; the video crops left and right */
 .try { display: grid; grid-template-columns: minmax(0, 620fr) auto; gap: calc(60*var(--u)); align-items: start; }
 .try ol { display: flex; flex-direction: column; gap: calc(8*var(--u)); padding-top: calc(4*var(--u)); }
@@ -368,7 +369,7 @@ section[id] { scroll-margin-top: calc(112*var(--u)); }
   .scale { padding: calc(24*var(--u)) calc(16*var(--u)); gap: calc(24*var(--u)); }
   .scale ul { gap: calc(24*var(--u)); }
   .scale li { gap: calc(16*var(--u)); }
-  .scale li svg { zoom: .55; } /* the whole test scales together, so every size stays distinct */
+  .scale li svg { --ks: .55; } /* the whole test scales together, so every size stays distinct (not zoom: Safari 17.1 lays zoomed SVG out at full size) */
   .scale .caprow { grid-column: auto; }
   .colors { flex-direction: column; height: calc(384*var(--u)); }
   .colors > div { width: 100% !important; height: calc(96*var(--u)); padding: calc(12*var(--u)) calc(16*var(--u)); justify-content: center; }
