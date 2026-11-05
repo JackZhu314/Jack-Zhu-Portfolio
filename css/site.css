@@ -59,6 +59,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .tree .d video, .tree video { cursor: zoom-in; }
 .card video { cursor: none; }
 .media > img, .media > video { width: 100%; height: 100%; object-fit: cover; }
+.media > .vimg { position: absolute; inset: 0; pointer-events: none; }
 .media p { position: absolute; }
 .abs { position: relative; container-type: inline-size; }
 .abs > * { margin: 0; }

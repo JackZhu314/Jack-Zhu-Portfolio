@@ -395,3 +395,5 @@ section[id] { scroll-margin-top: calc(112*var(--u)); }
   .foot { padding: calc(64*var(--u)) var(--margin) calc(32*var(--u)); font-size:max(calc(12*var(--u)),min(12PX,10PX)); line-height: calc(18*var(--u)); }
   .foot-links { gap: calc(16*var(--u)); }
 }
+.shot:has(> .vimg) { position: relative; }
+.shot > .vimg { position: absolute; inset: 0; pointer-events: none; }
